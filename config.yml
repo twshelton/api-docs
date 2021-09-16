@@ -1,0 +1,35 @@
+# To fetch schema from
+introspection: http://localhost:4001/graphql
+
+servers: # same format as for OpenAPI Specification
+  - url: https://galoy.com
+    description: Prod
+
+info: # same format as for OpenAPI Specification
+    title: Galoy - Bitcoin Beach
+    description: API Documentation
+
+ # define your domains by providing a set of usecases
+domains:
+  - name: Wallet # Name of the domain
+    description: Overview of Wallet queries  # Description of the domain
+    usecases:         
+     - name: allLevels # Operation name
+       description: Query All levels # Opearation description
+       query: query.allLevels # Query example - fetching single field
+     - name: userDetailsByPhone # Operation name
+       description: Query user details by phone # Opearation description
+       query: query.userDetailsByPhone  # Query example - fetching single field
+     - name: userDetailsByWalletName # Operation name
+       description: Query user details by wallet name # Opearation description
+       query: query.userDetailsByWalletName # Query example - fetching single field
+     - name: userUpdateLevel # Operation name
+       description: Mutate user level  # Opearation description
+       query: mutation.userUpdateLevel # Query example - fetching single field
+     - name: userUpdateStatus # Operation name
+       description: Mutate user status  # Opearation description
+       query: mutation.userUpdateStatus # Query example - fetching single field
+     - name: businessUpdateMapInfo # Operation name
+       description: Mutate Map info for business  # Opearation description
+       query: mutation.businessUpdateMapInfo # Query example - fetching single field
+
